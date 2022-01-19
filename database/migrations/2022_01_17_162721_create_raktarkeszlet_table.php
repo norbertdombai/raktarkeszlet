@@ -19,7 +19,7 @@ class CreateRaktarkeszletTable extends Migration
             $table->string('megnevezes');
             $table->float('ar');
             $table->integer('raktaron');
-
+            $table->timestamps(); // Ezt automatikusan legenerálja neked, ne töröld ki, vagy a modellben lévő comment szerint járj el
         });
     }
 

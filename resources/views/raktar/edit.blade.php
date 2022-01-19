@@ -10,7 +10,7 @@
 </head>
 <body>
   <div style="width: 80%; margin: auto;">
-    <form action="/api/raktar/{{ $raktar->id }}" method="POST">
+    <form action="/api/raktarkeszlet/{{ $raktar->id }}" method="POST"><!-- figyelni kell, hogy jó útvonalakat adjunk meg, ilyen útvonal nem létezik -->
       @csrf
       @method('put')
       <div class="form-group row">
