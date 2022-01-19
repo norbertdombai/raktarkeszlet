@@ -30,7 +30,7 @@
           <td>{{ $raktar->raktaron }}</td>
           <td style="display: flex;">
             <a href="/raktarkeszlet/edit/{{ $raktar->id }}"><button class="btn btn-sm btn-info">Szerkesztés</button></a>
-            <a><form action="/api/raktar/{{ $raktar->id }}" method="POST">@csrf @method('delete')<button type="submit" class="btn btn-sm btn-danger">Törlés</button></form></a>
+            <a><form action="/api/raktarkeszlet/{{ $raktar->id }}" method="POST">@csrf @method('delete')<button type="submit" class="btn btn-sm btn-danger">Törlés</button></form></a><!-- Ilyen útvonal megint nem létezik -->
           </td>
         </tr>
       @endforeach

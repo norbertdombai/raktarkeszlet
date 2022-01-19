@@ -10,7 +10,7 @@
 </head>
 <body>
   <div style="width: 80%; margin: auto;">
-    <form action="/api/raktar" method="POST">
+    <form action="/api/raktarkeszlet"  method="POST"><!-- figyelni kell, hogy jó útvonalakat adjunk meg, ilyen útvonal nem létezik -->
       @csrf
       <div class="form-group row">
         <label for="id" class="col-sm-2 col-form-label">ID</label>

@@ -36,7 +36,7 @@ class RaktarController extends Controller
     public function store(Request $request)
     {
         $raktar = new Raktar();
-        $raktar->id = $request->id;
+        //$raktar->id = $request->id; Az azonosítót hagyjuk, hogy kezelje az adatbázis, minden egyes új sor beszúrásánál automatikusan növekedni fog, ezáltal biztosítja, hogy minden rekordunk egyértelműen azonosítható lesz.
         $raktar->cikkszam = $request->cikkszam;
         $raktar->megnevezes = $request->megnevezes;
         $raktar->ar = $request->ar;
@@ -79,15 +79,15 @@ class RaktarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $project = Raktar::find($id);
-        $raktar->id = $request->id;
+        $raktar = Raktar::find($id); // a változó nevét is azért érdemes átírni
+        //$raktar->id = $request->id; Ezt ne változtassuk, hagyjuk, hogy kezelje az adatbáziskezelő
         $raktar->cikkszam = $request->cikkszam;
         $raktar->megnevezes = $request->megnevezes;
         $raktar->ar = $request->ar;
         $raktar->raktaron = $request->raktaron;
         $raktar->save();
 
-        return redirect('/raktar/list');
+        return redirect('/raktarkeszlet/list'); // Ilyen útvonal nem létezik
     }
 
     /**
@@ -99,7 +99,7 @@ class RaktarController extends Controller
     public function destroy($id)
     {
         Raktar::find($id)->delete();
-        return redirect('/raktar/list');
+        return redirect('/raktarkeszlet/list'); // Ilyen útvonal nem létezik
     }
 
     public function list()

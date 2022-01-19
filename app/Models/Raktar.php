@@ -11,4 +11,5 @@ class Raktar extends Model
     use HasFactory;
     //adatbázis tábla neév változtatása után kell beírni
     public $table = "raktarkeszlet";
+    //public $timestamps = false; // Ezzel fognak működni migrációs timestamp nélkül a lekérdezések
 }
